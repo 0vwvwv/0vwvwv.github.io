@@ -1,0 +1,103 @@
+html {
+    font-size: 72pt;
+}
+
+body {
+    margin: 0px;
+}
+
+p {
+    font-size: .5rem;
+    background-color: black;
+    color: white;
+}
+
+img {
+    width: 30vw;
+}
+
+/* .homeBackground {
+    background-image: url(/images/bridge.gif);
+    margin: 0%;
+    padding: 0%;
+    min-height: 100vh;
+} */
+
+.navbar {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: goldenrod;
+}
+
+.urHere {
+    color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a.red:hover {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+    animation: RedlinkAnim 300ms;
+}
+
+a.green:hover {
+    background-color: white;
+    color: green;
+    text-decoration: none;
+    animation: GreenlinkAnim 300ms;
+}
+
+a.blue:hover {
+    background-color: white;
+    color: blue;
+    text-decoration: none;
+    animation: BluelinkAnim 300ms;
+}
+
+a.purple:hover {
+    background-color: white;
+    color: goldenrod;
+    text-decoration: none;
+    animation: PurplelinkAnim 300ms;
+}
+
+@keyframes RedlinkAnim {
+    from {background-color: red; color:white;}
+    to {background-color: white; color:red;}
+}
+
+@keyframes GreenlinkAnim {
+    from {background-color: green; color:white;}
+    to {background-color: white; color:green;}
+}
+
+@keyframes BluelinkAnim {
+    from {background-color: blue; color:white;}
+    to {background-color: white; color:blue;}
+}
+
+@keyframes PurplelinkAnim {
+    from {background-color: goldenrod; color:white;}
+    to {background-color: white; color:goldenrod;}
+}
