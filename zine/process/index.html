@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../css/default.css">
+    </head>
+    <body>
+        <div class="navbar">
+             <a class="red" href="../../">home</a>
+             <a class="purple" href="../">zine</a>
+        </div>
+        <div class="navbar">
+            <a class="blue" href="../images/">images</a>
+            <a class="urHere" href="">process</a>
+        </div>
+        <p>
+            Using GIMP's GEGL command line interface to process the frames:<br><br>
+
+            gegl [yr image].JPG -o test.png -- c2g radius=300 samples=4 iterations=1 enhance-shadows=1<br><br>
+
+            <a class="green" target="_blank" href="https://www.gimpusers.com/forums/gimp-user/19125-gegl-run-c2g-batch-in-command-line">[source]</a>
+        </p>
+        <p>
+            Python script to batch process frames:<br><br>
+            import subprocess<br>
+
+            imgNo = [whatever yr 1st image is numbered]<br>
+
+            while imgNo < [one more that the highest number]:<br>
+            &emsp; imgName = "DSC_" + (str(imgNo).zfill(4)) + ".JPG"<br>
+            &emsp; fileName = "test" + (str(imgNo).zfill(4)) + ".png"<br>
+            &emsp; print(imgName)<br>
+            &emsp; subprocess.run(['gegl', imgName, '-o', fileName, '--', 'c2g', 'radius=300', 'samples=4', 'iterations=1', 'enhance-shadows=1'])<br>
+            &emsp; imgNo +=1<br><br>
+
+            <a class="purple" href="https://stackoverflow.com/questions/134934/display-number-with-leading-zeros" target="_blank">[1]</a>
+            <a class="green" href="https://www.youtube.com/watch?v=2Fp1N6dof0Y" target="_blank">[2]</a>
+            <a class="blue" href="https://www.w3schools.com" target="_blank">[3]</a>
+
+        </p>
+        <p>
+            And a modified version of that script that resizes the images using FFmpeg:<br><br>
+            import subprocess<br>
+
+            imgNo = 1091<br>
+
+            while imgNo < 1151:<br>
+            &emsp; imgName = "test" + (str(imgNo).zfill(4)) + ".png"<br>
+            &emsp; fileName = "drip" + (str(imgNo - 1090).zfill(2)) + ".png"<br>
+            &emsp; subprocess.run(['ffmpeg','-i',imgName,'-vf','scale=3600:2400',fileName])<br>
+            &emsp; #print(imgName + " -> " fileName)<br>
+            &emsp; imgNo +=1
+        </p>
+        <p>
+            All other image processing was done manually in GIMP.
+        </p>
+        <p>
+            The text was transcribed from a conversation with my friend Em.<br>
+            <a class="red" href="transcript.txt" target="_blank">[transcription with timecodes and spacing between pages]</a><br>
+        </p>
+        <p>If you have any other questions, make up the answers and act accordingly.</p>
+        <script src="" async defer></script>
+    </body>
+</html>
